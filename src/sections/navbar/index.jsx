@@ -3,7 +3,7 @@ import { MenuItem } from "../../components";
 import { navMenuLinks } from "../../constants/navMenu";
 import { ArrowRightIcon, CloseIcon, MenuIcon } from "../../components/icons";
 
-const Nav = ({}) => {
+const Navbar = ({}) => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -78,4 +78,4 @@ const Nav = ({}) => {
   );
 };
 
-export default Nav;
+export default Navbar;
