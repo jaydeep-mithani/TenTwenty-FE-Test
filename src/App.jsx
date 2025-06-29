@@ -1,10 +1,10 @@
-import { CarouselSection, HeroSection, Nav, TextContent } from "./sections";
+import { CarouselSection, HeroSection, Navbar, TextContent } from "./sections";
 import "./styles/main.scss";
 
 function App() {
   return (
     <main className="relative">
-      <Nav />
+      <Navbar />
       <HeroSection />
       <TextContent />
       <CarouselSection />
