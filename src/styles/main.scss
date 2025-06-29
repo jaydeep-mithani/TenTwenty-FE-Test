@@ -1,0 +1,164 @@
+// Tailwind rules
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Imports
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+// Variables
+$background-color: #fffcfa;
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+.bg-accent {
+  background-color: $background-color;
+}
+
+nav {
+  & .contact-button {
+    background: linear-gradient(to right, #000 50%, $background-color 50%);
+    background-size: 200%;
+    background-position: right;
+    transition: background 150ms linear, color 150ms linear;
+    &:hover {
+      background-position: left;
+      color: #fff;
+      & svg {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+.hero-section {
+  & .progress-path {
+    --hero-slide-duration: 5s; // Default duration
+    stroke-dashoffset: 524; // Initial state
+
+    &.animate-progress {
+      animation-name: progress-border;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  & .animate-slide-in-left {
+    animation: slideInFromLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      forwards;
+  }
+
+  & .animate-fade-in-bottom {
+    animation: fadeInFromBottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s
+      forwards;
+    opacity: 0;
+  }
+}
+
+.animated-number {
+  position: relative;
+  height: 24px;
+  width: 19.73px;
+  overflow: hidden;
+
+  .number {
+    position: absolute;
+    inset: 0;
+    color: white;
+  }
+
+  .slide-in {
+    animation: slideInFromBottom 0.3s ease forwards;
+  }
+
+  .slide-out {
+    animation: slideOutToTop 0.3s ease forwards;
+  }
+}
+
+.carousel-text-keyframe {
+  &.animate-out {
+    animation: slideOutUp 0.3s ease-in-out forwards;
+  }
+
+  &.animate-in {
+    animation: slideInUp 0.3s ease-in-out forwards;
+  }
+}
+
+// Single keyframe animation for the entire border
+@keyframes progress-border {
+  0% {
+    stroke-dashoffset: 544;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToTop {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
