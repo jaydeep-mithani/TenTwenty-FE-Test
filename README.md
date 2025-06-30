@@ -37,6 +37,7 @@ I am proud of the outcome — particularly because the design was challenging an
 
 ## 📁 Project Structure
 
+```bash
 ├── public/
 │ ├── images/ # All the images used in the template
 | ├── favicon.ico # Site icon
@@ -56,6 +57,7 @@ I am proud of the outcome — particularly because the design was challenging an
 ├── postcss.config.js # For tailwind support
 ├── tailwind.config.js
 └── webpack.config.js # Webpack packaging instructions
+```
 
 ---
 
